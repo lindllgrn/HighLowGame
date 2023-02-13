@@ -29,7 +29,7 @@ public class HighLowApp {
 		// welcome the user to the program
 		System.out.println(); //print blank line
 		System.out.println("==========================================");
-		System.out.println("Welcome to the Invoice Total Calculator V5");
+		System.out.println("	  Welcome to the High Low Game");
 		System.out.println("==========================================");
 
 		// perform invoice calculations until choice is "n" or "N"
