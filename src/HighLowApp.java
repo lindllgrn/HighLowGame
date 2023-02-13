@@ -20,6 +20,8 @@ public class HighLowApp {
 		double discountPercent = 0.0;
 		double discountAmount = 0.0;
 		double discountInvoiceTotal = 0.0;
+		
+		System.currentTimeMillis();
 
 		String choice = "y";
 
