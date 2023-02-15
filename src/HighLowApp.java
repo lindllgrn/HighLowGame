@@ -9,79 +9,81 @@ import java.util.Scanner;
  ********************************************************************************************/
 
 public class HighLowApp {
+	
+	
+	public static void printPlayer(Player player) {
+		System.out.println("Name:    " + player.getFirstName() + " " + player.getLastName()); 
+		System.out.println();
+	}
+	
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		// initialize variables for use in calculating averages
-		int invoiceCount = 0;
-		int lineItems = 0;
-
-		double invoiceTotal = 0.0;
-		double discountTotal = 0.0;
-		double subtotal = 0.0;
-		double discountPercent = 0.0;
-		double discountAmount = 0.0;
-		double discountInvoiceTotal = 0.0;
+		System.out.println("What is player one's first name?");
+		String player.firstName = sc.nextLine();
 		
-		System.currentTimeMillis();
+		Player player1 = new Player();
+		HighLowApp.printPlayer(player1);
+ 
+		// Change the instance's field values
+		player1.setFirstName("Lindsay");
+		player1.setLastName("Green");
+		HighLowApp.printPlayer(player1);
 
-		String choice = "y";
+		// Instantiate another new Account object using the overload constructor
+		Player player2 = new Player("Sam", "Smith");
+		HighLowApp.printPlayer(player2);
+
+		// Displaying class level field's value
 
 		// create a Scanner object named sc
-		Scanner sc = new Scanner(System.in);
 
 		// welcome the user to the program
 		System.out.println(); //print blank line
 		System.out.println("==========================================");
 		System.out.println("	  Welcome to the High Low Game");
 		System.out.println("==========================================");
-
+		
 		// perform invoice calculations until choice is "n" or "N"
-		while (!choice.equalsIgnoreCase("n")) {
+		//while (!choice.equalsIgnoreCase("n")) {
 
-			// get the invoice line items from the user
+			/*
 			System.out.println();
-			System.out.print("Enter the number of invoice line items: ");
-			lineItems = sc.nextInt();
+			System.out.print("What is your name? ");
+			playerOne = sc.nextLine();
 
+			System.out.println();
+			System.out.println("Hello" + " " + playerOne);
+			
 			System.out.println();
 			System.out.println("==========================================");
 			System.out.println();
 
+			System.out.println();
+			
+			System.out.println();
+			System.out.print("What is your name? ");
+			playerTwo = sc.nextLine();
+
+			System.out.println();
+			System.out.println("Hello" + " " + playerTwo);
+			
+			System.out.println();
+			System.out.println("==========================================");
+			System.out.println();
+
+			System.out.println();
+			*/
+			
 			//user enters the invoice amounts
-			for (int i = 1; i <= lineItems; i++) {   
-				System.out.print("Enter the #" + i + " line item amount:   ");
-				subtotal += sc.nextDouble();
+			//System.out.println(playerOne + " guess a number between 1-100.");
 
-				System.out.println();
-			}
+	sc.close();
+		
+	}
+}
 
-			System.out.println("==========================================");
-
-			// calculate the discount amount and total
-			if (subtotal >= 500) {
-				discountPercent = 0.25;
-			} else if (subtotal >= 200) {
-				discountPercent = 0.2;
-			} else if (subtotal >= 100) {
-				discountPercent = 0.1;
-			} else {
-				discountPercent = 0.0;
-			}
-			discountAmount = subtotal * discountPercent;
-			discountInvoiceTotal = subtotal - discountAmount;
-
-			// accumulate the invoice count and invoice total
-			invoiceTotal = invoiceTotal + discountInvoiceTotal;
-			discountTotal = discountTotal + discountAmount;
-			invoiceCount = invoiceCount + 1;  
-
-			System.out.println();
-
-			//displays the user's proper numbers according to the input data
-
-			System.out.println();
-			System.out.println("==========================================");
-
-			choice = sc.nextLine(); //clear the return char still in the input buffer
+			/*choice = sc.nextLine(); //clear the return char still in the input buffer
 
 			System.out.println();
 
@@ -89,17 +91,18 @@ public class HighLowApp {
 			System.out.print("Continue? (y/n): ");
 			choice = sc.nextLine();
 			System.out.println();
-		}
+		}*/
 
 		//caluculates and displays invoice count, average invoice, and average discount
 
 		//sends a goodbye message to the user when they are finished using the program
-		System.out.println("==========================================");
+		/*System.out.println("==========================================");
 		System.out.println();
 		System.out.println("Goodbye");
 		System.out.println();
 		System.out.println("==========================================");
+		*/
 
-		sc.close();
-	} //end of main
-} //end of invoiceapp class
+		//sc.close();
+	 //end of main
+ //end of invoiceapp class
