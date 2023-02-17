@@ -1,44 +1,52 @@
+import java.util.Scanner;
 
 public class Player {
-
-	public String firstName;
-	public String lastName;
-	int playerGuess = 0;
-
-	String choice = "y";
-
 	
-	public Player() {
-		//this.number = ++Account.lastNumber;
-		//this.balance = 0;
-		this.firstName = "";
-		this.lastName = "";
+	private static Scanner sc;
+
+	private Player player1;
+	private Player player2; 
+
+	private int attempts;
+	private int correctAnswer;
+
+	public static void setSc(Scanner sc) {
+		HighLowApp.sc = sc;
 	}
-		
-		public Player(String firstName, String lastName) {
-			this(); // call the default constructor
-		}
-		
-			public String getFirstName() {
-				return firstName;
-			}
 
-			public void setFirstName(String firstName) {
-				if (firstName == "")
-					System.out.println("first name can not be blank");
-				else 
-					this.firstName = firstName;
-			}
+	public void setPlayer1(Player player1) {
+		this.player1 = player1;
+	}
 
-			public String getLastName() {
-				return lastName;
-			}
+	public void setPlayer2(Player player2) {
+		this.player2 = player2;
+	}
 
-			public void setLastName(String lastName) {
-				if (lastName == "")
-					System.out.println("last name can not be blank");
-				else 
-					this.lastName = lastName;
-				this.lastName = lastName;
-			}
+	public void setAttempts(int attempts) {
+		this.attempts = attempts;
+	}
+
+	public void setCorrectAnswer(int correctAnswer) {
+		this.correctAnswer = correctAnswer;
+	}
+	
+	public static Scanner getSc() {
+		return sc;
+	}
+
+	public Player getPlayer1() {
+		return player1;
+	}
+
+	public Player getPlayer2() {
+		return player2;
+	}
+
+	public int getAttempts() {
+		return attempts;
+	}
+
+	public int getCorrectAnswer() {
+		return correctAnswer;
+	}
 }
