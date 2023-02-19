@@ -1,7 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 
-//testing github
 public class HighLowApp {
 
 	private static Scanner sc;
@@ -24,19 +23,50 @@ public class HighLowApp {
 	}
 	
 	public void displayHeader() {
-		System.out.println("High/Low Game");
+		System.out.println("=======================================================");
+		System.out.println("||           Welcome to the High/Low Game            ||");
+		System.out.println("=======================================================");
+		System.out.println("Game rules: ");
+		System.out.println();
+		System.out.println("1) Both players will take turns guessing a number 1-100");
+		System.out.println();
+		System.out.println("2) At the beginning of each round, players will take ");
+		System.out.println("turns on going first.");
+		System.out.println();
+		System.out.println("3) After guessing, players will get a hint if they are ");
+		System.out.println("getting warmer or colder.");
+		System.out.println();
+		System.out.println("4) The game will track each player's lowest and highest ");
+		System.out.println("attempts plus the number of wins.");
+		System.out.println();
+		System.out.println("5) After each round, the players get to decide if they ");
+		System.out.println("want to continue or quit the game.");
+		System.out.println();
+		System.out.println("=======================================================");
+		
+		
 	}
 
 	public void setupPlayers() {
 		String userInput = "?";
 		
-		System.out.print("Player1 name: ");
+		System.out.println();
+		
+		System.out.print("Please enter the first player's name: ");
 		userInput = sc.nextLine();
 		this.player1.setName(userInput);
 
-		System.out.print("Player2  name: ");
+		System.out.print("Please enter the second player's name: ");
 		userInput = sc.nextLine();
 		this.player2.setName(userInput);
+		
+		System.out.println();
+	
+		System.out.println("Welcome " + this.player1.getName() + " and " + this.player2.getName() + "! Let's get this game started!" );
+		
+		System.out.println();
+		
+		System.out.println("=======================================================");
 	}
 
 
@@ -46,6 +76,12 @@ public class HighLowApp {
 		String playerName = player.getName();
 		
 	    attempts++;
+	    
+	    System.out.println();
+	    
+	    System.out.println("Can you guess the number I am thinking of between 1-100?");
+	    
+	    System.out.println();
 		
 		System.out.print("What's your guess, " + playerName + ": ");
 		
@@ -58,6 +94,7 @@ public class HighLowApp {
 
 		if (playerGuess == this.correctAnswer) {
 			System.out.println("Correct");
+			System.out.println();
 			player.addWin();
 			player.setAttempts(this.attempts);
 			return true;
@@ -67,14 +104,17 @@ public class HighLowApp {
 
 		System.out.println("Invalid"); // TODO !!! Add multi-branch if-else message based on distance
 		
+		System.out.println();
+		
 		return false;
 	}
 	
 	public void displayStats() {
 		// TODO: use a printf to align report in columns
-		//System.out.printf("%20s: %,10.2f\n", "Discount percent", discountPercent);
-        //System.out.printf(this.player1.getName()); 
-        //System.out.printf(this.player2.getName()); 
+        System.out.printf("%5s%5s%5s%5s", "Name", "Wins", "Highest Attempts", "Lowest Attempts");
+        System.out.printf("%5s%5i%5i%5i", this.player1.getName(), this.player1.getWins(), this.player1.getHighestAttempts(), this.player1.getLowestAttempts()); 
+        System.out.printf("%5s%5i%5i%5i", this.player2.getName(), this.player2.getWins(), this.player2.getHighestAttempts(), this.player2.getLowestAttempts()); 
+        System.out.println();
 	}
 	
 	public void playGame() {
@@ -100,14 +140,22 @@ public class HighLowApp {
 		    }
 		    
 		    sc.nextLine(); // clear input buffer, leftover from nextInt
-		    System.out.print("Press the Enter key to display the game stats...");
+		    System.out.println("Press the Enter key to display the game stats...");
+		    System.out.println();
+		    System.out.println("=======================================================");
+		    
 		    sc.nextLine();
 		    
 		    this.displayStats();
 		    
 		    while (true) {
+		    	System.out.println("=======================================================");
+		    	System.out.println();
 		    	System.out.print("Do you want to play again (y=yes, n=no): ");
 		    	cont = sc.nextLine();
+		    	System.out.println();
+		    	System.out.println("=======================================================");
+		    	
 		    	
 		    	if (cont.equals("y") || cont.equals("yes") || cont.equals("n") || cont.equals("no"))
 		    		break;
@@ -121,7 +169,10 @@ public class HighLowApp {
 	} // end of playGame method
 	
 	public void displayClosing() {
-		System.out.println("Good bye " + player1.getName() + " and " + player2.getName());
+		System.out.println();
+		System.out.println("It was fun while it lasted! Please come back soon!");
+		System.out.println();
+		System.out.println("Good bye " + player1.getName() + " and " + player2.getName() + "!");
 	}
 
 	public static void main(String[] args) {
