@@ -6,10 +6,10 @@ public class HighLowApp {
 	private static Scanner sc;
 
 	private Player player1;
-	private Player player2; 
+	private Player player2;
 
-	private int attempts;
-	private int correctAnswer;
+	private int attempts = 0;
+	private int correctAnswer= 0;
 	
 	public HighLowApp() {
 		this.sc = new Scanner(System.in);
@@ -71,8 +71,9 @@ public class HighLowApp {
 	
 	public void displayStats() {
 		// TODO: use a printf to align report in columns
-        System.out.println(this.player1.getName()); 
-        System.out.println(this.player2.getName()); 
+		System.out.printf("%20s: %,10.2f\n", "Discount percent", discountPercent);
+        System.out.printf(this.player1.getName(), ); 
+        System.out.printf(this.player2.getName()); 
 	}
 	
 	public void playGame() {

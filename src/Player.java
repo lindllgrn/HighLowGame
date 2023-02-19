@@ -1,30 +1,30 @@
-import java.util.Scanner;
-
 public class Player {
 	
-	private static Scanner sc;
+	private static int LastNumber = 0;
 
-	private Player player1;
-	private Player player2; 
-
+	private int id;
 	private int attempts;
-	private int correctAnswer;
 	private int lowestAttempts;
 	private int highestAttempts;
 	private int wins;
 	
 	private String name;
 	
+	public Player() {
+		this.id = ++Player.LastNumber;
+		this.name = "Unknown";
+		this.wins = 0;
+		this.lowestAttempts = 0;
+		this.highestAttempts = 0;
+	}
+	 
+	public Player(String name) {
+		this();
+		this.name = name;
+	}
+	
 	public void addWin() {
 		this.wins++;
-	}
-
-	public void setPlayer1(Player player1) {
-		this.player1 = player1;
-	}
-
-	public void setPlayer2(Player player2) {
-		this.player2 = player2;
 	}
 
 	public void setAttempts(int attempts) {
@@ -37,34 +37,22 @@ public class Player {
 			this.lowestAttempts = attempts;
 	}
 
-	public void setCorrectAnswer(int correctAnswer) {
+	/*public void setCorrectAnswer(int correctAnswer) {
 		this.correctAnswer = correctAnswer;
-	}
-	
-	public static Scanner getSc() {
-		return sc;
-	}
-
-	public Player getPlayer1() {
-		return player1;
-	}
-
-	public Player getPlayer2() {
-		return player2;
-	}
+		}*/
 
 	public int getAttempts() {
 		return attempts;
 	}
 
-	public int getCorrectAnswer() {
+	/*public int getCorrectAnswer() {
 		return correctAnswer;
-	}
+	}*/
 
 	public int getLowestAttempts() {
 		return lowestAttempts;
 	}
-
+	
 	public void setLowestAttempts(int lowestAttempts) {
 		this.lowestAttempts = lowestAttempts;
 	}
@@ -83,5 +71,13 @@ public class Player {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public int getWins() {
+		return wins;
 	}
 }
