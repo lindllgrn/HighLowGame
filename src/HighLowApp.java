@@ -72,7 +72,7 @@ public class HighLowApp {
 	public void displayStats() {
 		// TODO: use a printf to align report in columns
 		System.out.printf("%20s: %,10.2f\n", "Discount percent", discountPercent);
-        System.out.printf(this.player1.getName(), ); 
+        System.out.printf(this.player1.getName()); 
         System.out.printf(this.player2.getName()); 
 	}
 	
