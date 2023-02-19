@@ -1,6 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
+//testing
 public class HighLowApp {
 
 	private static Scanner sc;
