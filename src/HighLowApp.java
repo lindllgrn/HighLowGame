@@ -93,7 +93,7 @@ public class HighLowApp {
 	    playerGuess = sc.nextInt();
 
 		if (playerGuess == this.correctAnswer) {
-			System.out.println("Correct");
+			System.out.println("Yay! Good job! You got the answer correct");
 			System.out.println();
 			player.addWin();
 			player.setAttempts(this.attempts);
@@ -102,7 +102,23 @@ public class HighLowApp {
 			
 		distance = Math.abs(playerGuess - this.correctAnswer);
 
-		System.out.println("Invalid"); // TODO !!! Add multi-branch if-else message based on distance
+		//System.out.println("Invalid"); // TODO !!! Add multi-branch if-else message based on distance
+		
+		if (distance > 50) {
+			System.out.println("Freezing!");
+		}
+		else if (distance <= 50 && distance > 21) {
+			System.out.println("Cold!");
+		}
+		else if (distance <= 20 && distance > 11) {
+			System.out.println("Warm!");
+		}
+		else if (distance <= 10 && distance > 6) {
+			System.out.println("Red hot!");
+		}
+		else if (distance <= 5) {
+			System.out.println("Boiling!!");
+		}
 		
 		System.out.println();
 		
@@ -111,9 +127,9 @@ public class HighLowApp {
 	
 	public void displayStats() {
 		// TODO: use a printf to align report in columns
-        System.out.printf("%5s%5s%5s%5s", "Name", "Wins", "Highest Attempts", "Lowest Attempts");
-        System.out.printf("%5s%5i%5i%5i", this.player1.getName(), this.player1.getWins(), this.player1.getHighestAttempts(), this.player1.getLowestAttempts()); 
-        System.out.printf("%5s%5i%5i%5i", this.player2.getName(), this.player2.getWins(), this.player2.getHighestAttempts(), this.player2.getLowestAttempts()); 
+        System.out.println("       Name     Wins      Highest Attempts     Lowest Attempts");
+        System.out.printf("%10s   %5d           %5d               %5d\n", this.player1.getName(), this.player1.getWins(), this.player1.getHighestAttempts(), this.player1.getLowestAttempts()); 
+        System.out.printf("%10s   %5d           %5d               %5d\n", this.player2.getName(), this.player2.getWins(), this.player2.getHighestAttempts(), this.player2.getLowestAttempts()); 
         System.out.println();
 	}
 	
@@ -142,14 +158,14 @@ public class HighLowApp {
 		    sc.nextLine(); // clear input buffer, leftover from nextInt
 		    System.out.println("Press the Enter key to display the game stats...");
 		    System.out.println();
-		    System.out.println("=======================================================");
+		    System.out.println("=============================================================");
 		    
 		    sc.nextLine();
 		    
 		    this.displayStats();
 		    
 		    while (true) {
-		    	System.out.println("=======================================================");
+		    	System.out.println("=============================================================");
 		    	System.out.println();
 		    	System.out.print("Do you want to play again (y=yes, n=no): ");
 		    	cont = sc.nextLine();

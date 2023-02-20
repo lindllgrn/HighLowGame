@@ -37,17 +37,9 @@ public class Player {
 			this.lowestAttempts = attempts;
 	}
 
-	/*public void setCorrectAnswer(int correctAnswer) {
-		this.correctAnswer = correctAnswer;
-		}*/
-
 	public int getAttempts() {
 		return attempts;
 	}
-
-	/*public int getCorrectAnswer() {
-		return correctAnswer;
-	}*/
 
 	public int getLowestAttempts() {
 		return lowestAttempts;
