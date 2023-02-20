@@ -22,6 +22,7 @@ public class HighLowApp {
 		
 	}
 	
+	//opening header for the app
 	public void displayHeader() {
 		System.out.println("=======================================================");
 		System.out.println("||           Welcome to the High/Low Game            ||");
@@ -47,6 +48,7 @@ public class HighLowApp {
 		
 	}
 
+	//asks the users for their names and welcomes them to the game
 	public void setupPlayers() {
 		String userInput = "?";
 		
@@ -69,7 +71,7 @@ public class HighLowApp {
 		System.out.println("=======================================================");
 	}
 
-
+	//asks the users if they can guess the random number and handles for non-numeric input
 	public boolean guess(Player player) {
 		int playerGuess = 0;
 		int distance = 0;
@@ -91,7 +93,8 @@ public class HighLowApp {
 	    }
 
 	    playerGuess = sc.nextInt();
-
+	    
+	    //if the user guesses correctly, gives them a correct message
 		if (playerGuess == this.correctAnswer) {
 			System.out.println("Yay! Good job! You got the answer correct");
 			System.out.println();
@@ -104,6 +107,7 @@ public class HighLowApp {
 
 		//System.out.println("Invalid"); // TODO !!! Add multi-branch if-else message based on distance
 		
+		//gives the users hints to how close they are to the random number
 		if (distance > 50) {
 			System.out.println("Freezing!");
 		}
@@ -125,14 +129,15 @@ public class HighLowApp {
 		return false;
 	}
 	
+	//displays the the stats of each round like name, wins, highest attempts, and lowest attempts
 	public void displayStats() {
-		// TODO: use a printf to align report in columns
         System.out.println("       Name     Wins      Highest Attempts     Lowest Attempts");
         System.out.printf("%10s   %5d           %5d               %5d\n", this.player1.getName(), this.player1.getWins(), this.player1.getHighestAttempts(), this.player1.getLowestAttempts()); 
         System.out.printf("%10s   %5d           %5d               %5d\n", this.player2.getName(), this.player2.getWins(), this.player2.getHighestAttempts(), this.player2.getLowestAttempts()); 
         System.out.println();
 	}
 	
+	//generates the random number and loops while the user wants to keep playing
 	public void playGame() {
 		Random random = new Random();
 		
@@ -143,7 +148,7 @@ public class HighLowApp {
 			
 			this.attempts = 0;
 		    this.correctAnswer = random.nextInt(100) + 1;
-		    System.out.println("****ONLY for Testing - Correct Answer is  " + this.correctAnswer + " ****");
+		    //System.out.println("****ONLY for Testing - Correct Answer is  " + this.correctAnswer + " ****");
 		    
 		    correct = false;
 
@@ -155,6 +160,7 @@ public class HighLowApp {
 			    	correct = this.guess(this.player2);
 		    }
 		    
+		    //asks the user to press enter to display the stats
 		    sc.nextLine(); // clear input buffer, leftover from nextInt
 		    System.out.println("Press the Enter key to display the game stats...");
 		    System.out.println();
@@ -164,6 +170,7 @@ public class HighLowApp {
 		    
 		    this.displayStats();
 		    
+		    //asks the user if they want to play again
 		    while (true) {
 		    	System.out.println("=============================================================");
 		    	System.out.println();
@@ -184,6 +191,7 @@ public class HighLowApp {
 		
 	} // end of playGame method
 	
+	//gives the users a goodbye  message
 	public void displayClosing() {
 		System.out.println();
 		System.out.println("It was fun while it lasted! Please come back soon!");
