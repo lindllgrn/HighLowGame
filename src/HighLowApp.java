@@ -22,7 +22,7 @@ public class HighLowApp {
 		
 	}
 	
-	//opening header for the app
+	//opening header for the apps
 	public void displayHeader() {
 		System.out.println("=======================================================");
 		System.out.println("||           Welcome to the High/Low Game            ||");

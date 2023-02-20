@@ -133,7 +133,7 @@ public class Player {
 	}
 	
 	/**
-	 * this gets the user's ids
+	 * this gets the user's id's
 	 * @return The user id
 	 */
 	public int getId() {
