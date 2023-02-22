@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 /**
  * Class used to generate playable game for the users
- * @author brkell07
+ * @author brennenkel
  *
  */
 public class HighLowApp {
