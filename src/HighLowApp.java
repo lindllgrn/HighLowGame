@@ -121,13 +121,13 @@ public class HighLowApp {
 		if (distance > 50) {
 			System.out.println("Freezing!");
 		}
-		else if (distance <= 50 && distance > 21) {
+		else if (distance <= 50 && distance >= 21) {
 			System.out.println("Cold!");
 		}
-		else if (distance <= 20 && distance > 11) {
+		else if (distance <= 20 && distance >= 11) {
 			System.out.println("Warm!");
 		}
-		else if (distance <= 10 && distance > 6) {
+		else if (distance <= 10 && distance >= 6) {
 			System.out.println("Red hot!");
 		}
 		else if (distance <= 5) {
@@ -162,7 +162,8 @@ public class HighLowApp {
 			
 			this.attempts = 0;
 		    this.correctAnswer = random.nextInt(100) + 1;
-		    
+		    System.out.println("****ONLY for Testing - Correct Answer is  " + this.correctAnswer + " ****");
+
 		    correct = false;
 
 		    while (!correct) {

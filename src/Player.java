@@ -6,7 +6,7 @@
 public class Player {
 	
 	/**
-	 * gives the player id based on the last id number
+	 * gives the player id based on the last id numbers
 	 */
 	private static int LastNumber = 0;
 	/**
