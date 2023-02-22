@@ -2,29 +2,34 @@
  * Class used to create Account objects
  * @author lindllgre
  *
- */
+ **/
 public class Player {
 	
 	/**
 	 * gives the player id based on the last id numbers
 	 */
 	private static int LastNumber = 0;
+	
 	/**
 	 * generates a unique id to each player
 	 */
 	private int id;
+	
 	/**
 	 * generates the number of attempts each user has
 	 */
 	private int attempts;
+	
 	/**
 	 * generates the lowest number of attempts the user made
 	 */
 	private int lowestAttempts;
+	
 	/** 
 	 * generates the highest number of attempts the user made
 	 */
 	private int highestAttempts;
+	
 	/**
 	 * generates the number of wins the users have
 	 */

@@ -26,6 +26,7 @@ public class HighLowApp {
 		this.correctAnswer = 0;
 		
 	}
+	
 	/**
 	 * opening header and rules for the apps
 	 */
@@ -81,8 +82,8 @@ public class HighLowApp {
 	
 	/**
 	 * asks the users if they can guess the random number and handles for non-numeric input
-	 * @param player
-	 * @return
+	 * @param player calls player
+	 * @return boolean returns true
 	 */
 	public boolean guess(Player player) {
 		int playerGuess = 0;
@@ -162,7 +163,6 @@ public class HighLowApp {
 			
 			this.attempts = 0;
 		    this.correctAnswer = random.nextInt(100) + 1;
-		    System.out.println("****ONLY for Testing - Correct Answer is  " + this.correctAnswer + " ****");
 
 		    correct = false;
 
@@ -214,9 +214,10 @@ public class HighLowApp {
 		System.out.println();
 		System.out.println("Good bye " + player1.getName() + " and " + player2.getName() + "!");
 	}
+	
 	/**
 	 * main calls each function and displays them
-	 * @param args
+	 * @param args ?
 	 */
 	public static void main(String[] args) {
 
