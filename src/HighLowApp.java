@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 /**
  * Class used to generate playable game for the users
- * @author brkell07
+ * @author brennenkel
  *
  */
 public class HighLowApp {
@@ -26,8 +26,9 @@ public class HighLowApp {
 		this.correctAnswer = 0;
 		
 	}
-	
-	//opening header and rules for the apps
+	/**
+	 * opening header and rules for the apps
+	 */
 	public void displayHeader() {
 		System.out.println("=======================================================");
 		System.out.println("||           Welcome to the High/Low Game            ||");
@@ -52,8 +53,10 @@ public class HighLowApp {
 		
 		
 	}
-
-	//asks the users for their names and welcomes them to the game
+	
+	/**
+	 * asks the users for their names and welcomes them to the game
+	 */
 	public void setupPlayers() {
 		String userInput = "?";
 		
@@ -75,8 +78,12 @@ public class HighLowApp {
 		
 		System.out.println("=======================================================");
 	}
-
-	//asks the users if they can guess the random number and handles for non-numeric input
+	
+	/**
+	 * asks the users if they can guess the random number and handles for non-numeric input
+	 * @param player
+	 * @return
+	 */
 	public boolean guess(Player player) {
 		int playerGuess = 0;
 		int distance = 0;
@@ -132,7 +139,9 @@ public class HighLowApp {
 		return false;
 	}
 	
-	//displays the the stats of each round like name, wins, highest attempts, and lowest attempts
+	/**
+	 * displays the the stats of each round like name, wins, highest attempts, and lowest attempts
+	 */
 	public void displayStats() {
         System.out.println("       Name     Wins      Highest Attempts     Lowest Attempts");
         System.out.printf("%10s   %5d           %5d               %5d\n", this.player1.getName(), this.player1.getWins(), this.player1.getHighestAttempts(), this.player1.getLowestAttempts()); 
@@ -140,7 +149,9 @@ public class HighLowApp {
         System.out.println();
 	}
 	
-	//generates the random number and loops while the user wants to keep playing
+	/**
+	 * generates the random number and loops while the user wants to keep playing
+	 */
 	public void playGame() {
 		Random random = new Random();
 		
@@ -193,14 +204,19 @@ public class HighLowApp {
 		
 	} // end of playGame method
 	
-	//gives the users a goodbye  message
+	/**
+	 * gives the users a goodbye  message
+	 */
 	public void displayClosing() {
 		System.out.println();
 		System.out.println("It was fun while it lasted! Please come back soon!");
 		System.out.println();
 		System.out.println("Good bye " + player1.getName() + " and " + player2.getName() + "!");
 	}
-
+	/**
+	 * main calls each function and displays them
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		HighLowApp app = new HighLowApp();
