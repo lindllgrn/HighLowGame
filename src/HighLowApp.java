@@ -1,6 +1,11 @@
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Class used to generate playable game for the users
+ * @author brkell07
+ *
+ */
 public class HighLowApp {
 
 	private static Scanner sc;
@@ -22,7 +27,7 @@ public class HighLowApp {
 		
 	}
 	
-	//opening header for the apps
+	//opening header and rules for the apps
 	public void displayHeader() {
 		System.out.println("=======================================================");
 		System.out.println("||           Welcome to the High/Low Game            ||");
@@ -104,8 +109,6 @@ public class HighLowApp {
 		} 
 			
 		distance = Math.abs(playerGuess - this.correctAnswer);
-
-		//System.out.println("Invalid"); // TODO !!! Add multi-branch if-else message based on distance
 		
 		//gives the users hints to how close they are to the random number
 		if (distance > 50) {
