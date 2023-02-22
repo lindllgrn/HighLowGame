@@ -151,7 +151,6 @@ public class HighLowApp {
 			
 			this.attempts = 0;
 		    this.correctAnswer = random.nextInt(100) + 1;
-		    //System.out.println("****ONLY for Testing - Correct Answer is  " + this.correctAnswer + " ****");
 		    
 		    correct = false;
 
