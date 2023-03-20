@@ -2,9 +2,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * Class used to generate playable game for the users
+ * Class used to generate playable game for the users. It allows users to guess a random number that the computer
+ * generated and each user guesses until someone gets it correct. The game then counts how many attempts and 
+ * how many wins each player has and displays them. The user will then be asked if they would like to continue the game.
  * @author brennenkel
- *
+ * @author lindllgrn
+ * GitHub URL: https://github.com/lindllgrn/HighLowGame
  */
 public class HighLowApp {
 
@@ -119,20 +122,20 @@ public class HighLowApp {
 		distance = Math.abs(playerGuess - this.correctAnswer);
 		
 		//gives the users hints to how close they are to the random number
-		if (distance > 50) {
-			System.out.println("Freezing!");
+		if (distance <= 5) {
+			System.out.println("Boiling!!");
 		}
-		else if (distance <= 50 && distance >= 21) {
-			System.out.println("Cold!");
-		}
-		else if (distance <= 20 && distance >= 11) {
-			System.out.println("Warm!");
-		}
-		else if (distance <= 10 && distance >= 6) {
+		else if (distance <= 10) {
 			System.out.println("Red hot!");
 		}
-		else if (distance <= 5) {
-			System.out.println("Boiling!!");
+		else if (distance <= 20) {
+			System.out.println("Warm!");
+		}
+		else if (distance <= 50) {
+			System.out.println("Cold!");
+		}
+		else if (distance > 51) {
+			System.out.println("Freezing!");
 		}
 		
 		System.out.println();
@@ -144,9 +147,9 @@ public class HighLowApp {
 	 * displays the the stats of each round like name, wins, highest attempts, and lowest attempts
 	 */
 	public void displayStats() {
-        System.out.println("       Name     Wins      Highest Attempts     Lowest Attempts");
-        System.out.printf("%10s   %5d           %5d               %5d\n", this.player1.getName(), this.player1.getWins(), this.player1.getHighestAttempts(), this.player1.getLowestAttempts()); 
-        System.out.printf("%10s   %5d           %5d               %5d\n", this.player2.getName(), this.player2.getWins(), this.player2.getHighestAttempts(), this.player2.getLowestAttempts()); 
+        System.out.println("    Name   Wins   Highest Attempts   Lowest Attempts");
+        System.out.printf("%10s%5d      %5d          %5d\n", this.player1.getName(), this.player1.getWins(), this.player1.getHighestAttempts(), this.player1.getLowestAttempts()); 
+        System.out.printf("%10s%5d      %5d          %5d\n", this.player2.getName(), this.player2.getWins(), this.player2.getHighestAttempts(), this.player2.getLowestAttempts()); 
         System.out.println();
 	}
 	

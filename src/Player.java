@@ -1,7 +1,9 @@
 /**
- * Class used to create Account objects
- * @author lindllgre
- *
+ * Class used to create game objects. This class allows for HighLowApp.java to access each constructor, method, etc,
+ * without it having to be included in the HighLowApp and could just be called.
+ * @author lindllgrn
+ * @author brennenkel
+ * GitHub URL: https://github.com/lindllgrn/HighLowGame
  **/
 public class Player {
 	
@@ -11,37 +13,37 @@ public class Player {
 	private static int LastNumber = 0;
 	
 	/**
-	 * generates a unique id to each player
+	 * a unique id to each player
 	 */
 	private int id;
 	
 	/**
-	 * generates the number of attempts each user has
+	 * the number of attempts each user has
 	 */
 	private int attempts;
 	
 	/**
-	 * generates the lowest number of attempts the user made
+	 * the lowest number of attempts the user made
 	 */
 	private int lowestAttempts;
 	
 	/** 
-	 * generates the highest number of attempts the user made
+	 * the highest number of attempts the user made
 	 */
 	private int highestAttempts;
 	
 	/**
-	 * generates the number of wins the users have
+	 * the number of wins the users have
 	 */
 	private int wins;
 	
 	/**
-	 * generates the users names
+	 * the users names
 	 */
 	private String name;
 	
 	/**
-	 * creates the base of the player
+	 * creates the base of the player and their starting stats before playing tha game
 	 */
 	public Player() {
 		this.id = ++Player.LastNumber;
@@ -52,7 +54,8 @@ public class Player {
 	}
 	 
 	/**
-	 * generates the users names
+	 * generates the users names so the program is able to use them for greeting, asking a specific player the question
+	 * and to help the display stats to easier to read
 	 * @param name The user's first name
 	 */
 	public Player(String name) {
@@ -96,14 +99,6 @@ public class Player {
 	public int getLowestAttempts() {
 		return lowestAttempts;
 	}
-	
-	/**
-	 * this sets the lowest number of attempts to the number of attempts the user used
-	 * @param lowestAttempts The lowest number of attempts that the user used
-	 */
-	public void setLowestAttempts(int lowestAttempts) {
-		this.lowestAttempts = lowestAttempts;
-	}
 
 	/**
 	 * this gets the highest amount of attempts that the use used
@@ -111,14 +106,6 @@ public class Player {
 	 */
 	public int getHighestAttempts() {
 		return highestAttempts;
-	}
-
-	/**
-	 * this sets the highest number of attempts to the highest attempts
-	 * @param highestAttempts this creates the highest attempts for the display stats
-	 */
-	public void setHighestAttempts(int highestAttempts) {
-		this.highestAttempts = highestAttempts;
 	}
 
 	/**
